@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,7 +17,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-    private Label currentHouseTotal;
+    public VBox vbox;
+    @FXML private Label currentHouseTotal;
     @FXML private Label playerPoints;
     @FXML private Label cardsLeft;
     @FXML
@@ -39,6 +41,7 @@ public class Controller implements Initializable {
     private ImageView currentCard;
     private Game game = new Game();
     @FXML private int currentCardValue;
+
 
     public void placeCard(MouseEvent mouseEvent) throws IOException {
 
@@ -130,5 +133,18 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showCurrentCard();
+        BackgroundSize backgroundSize = new BackgroundSize(900,
+                700,
+                true,
+                true,
+                true,
+                false);
+        BackgroundImage image = new BackgroundImage(new Image("/resources/images/background.jpeg"),
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                backgroundSize);
+
+        vbox.setBackground(new Background(image));
     }
 }

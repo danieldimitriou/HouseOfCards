@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
+
 /*
 AUTHORS:
 DIONYSHS PETROTOS, dpetrotos@athtech.gr
@@ -21,6 +22,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("gaem");
         primaryStage.setScene(new Scene(root, 500, 500));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
