@@ -4,18 +4,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="485.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<VBox fx:id="vbox" nodeOrientation="LEFT_TO_RIGHT" prefHeight="485.0" prefWidth="586.0" stylesheets="@../resources/styles/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Label fx:id="cardsLeft" alignment="TOP_LEFT" prefHeight="16.0" prefWidth="95.0" text="Cards left:">
+      <Label id="label" fx:id="cardsLeft" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="140.0" stylesheets="@../resources/styles/style.css" text="Cards left:" textFill="RED" wrapText="true">
          <VBox.margin>
             <Insets left="10.0" top="10.0" />
          </VBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
       </Label>
-      <Label fx:id="playerPoints" alignment="TOP_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="16.0" prefWidth="121.0" text="Player points:">
+      <Label id="label" fx:id="playerPoints" alignment="TOP_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="21.0" prefWidth="165.0" text="Player points:" textFill="RED" wrapText="true">
          <VBox.margin>
             <Insets left="10.0" top="10.0" />
          </VBox.margin>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
       </Label>
       <GridPane alignment="CENTER" layoutX="100.0" prefHeight="136.0" prefWidth="402.0">
         <columnConstraints>

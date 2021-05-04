@@ -133,12 +133,12 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showCurrentCard();
-        BackgroundSize backgroundSize = new BackgroundSize(900,
-                700,
-                true,
-                true,
-                true,
-                false);
+        BackgroundSize backgroundSize = new BackgroundSize(500,
+                500,
+                false,
+                false,
+                false,
+                true);
         BackgroundImage image = new BackgroundImage(new Image("/resources/images/background.jpeg"),
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,

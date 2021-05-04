@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Spongeboytt2';
+        src: url('resources/styles/Spongeboytt2Regular-ALLjx.ttf');
+}
+
+#label {
+    -fx-font-family: "Spongeboytt2";
+}
