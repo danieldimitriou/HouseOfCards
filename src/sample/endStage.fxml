@@ -16,7 +16,7 @@
 
 </AnchorPane>
       <Button mnemonicParsing="false" onAction="#resetGame" text="Yes" />
-      <Button mnemonicParsing="false" text="No">
+      <Button mnemonicParsing="false" onAction="#quit" text="No">
          <GridPane.margin>
             <Insets bottom="150.0" left="150.0" right="150.0" top="150.0" />
          </GridPane.margin>

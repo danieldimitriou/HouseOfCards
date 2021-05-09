@@ -16,4 +16,8 @@ public class EndStageController implements Initializable {
 
     public void resetGame(ActionEvent actionEvent) {
     }
+
+    public void quit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }
