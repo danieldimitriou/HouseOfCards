@@ -79,6 +79,7 @@ public class Controller implements Initializable {
             house4Image.setDisable(true);
             gameEnd(false);
 
+
         } else if (game.getRound() == 40) {
             System.out.println("You win");
 //            for(int i = 0; i < game.getBoard().length; i++){
@@ -140,10 +141,15 @@ public class Controller implements Initializable {
             endStage.setTitle("win"); //create a window when you win
         } else{
             endStage.setTitle("lose"); //create an other window when you lose
+            game.getPlayer().setPoints(0);
+            playerPoints.setText("Player points: 0");
         }
         endStage.setScene(new Scene(root, 450, 350)); // window is on top of the main game window
         endStage.show();
     }
+
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
