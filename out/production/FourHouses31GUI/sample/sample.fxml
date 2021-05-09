@@ -8,23 +8,23 @@
 
 <VBox fx:id="vbox" nodeOrientation="LEFT_TO_RIGHT" prefHeight="485.0" prefWidth="586.0" stylesheets="@../resources/styles/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Label id="label" fx:id="cardsLeft" alignment="TOP_LEFT" prefHeight="21.0" prefWidth="140.0" stylesheets="@../resources/styles/style.css" text="Cards left:" textFill="RED" wrapText="true">
+      <Label fx:id="cardsLeft" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="205.0" stylesheets="@../resources/styles/style.css" text="Cards left:" textFill="#9d00ff" wrapText="true">
          <VBox.margin>
             <Insets left="10.0" top="10.0" />
          </VBox.margin>
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label id="label" fx:id="playerPoints" alignment="TOP_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="21.0" prefWidth="165.0" text="Player points:" textFill="RED" wrapText="true">
+      <Label fx:id="playerPoints" alignment="TOP_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="30.0" prefWidth="244.0" text="Player points:" textFill="#9d00ff" wrapText="true">
          <VBox.margin>
             <Insets left="10.0" top="10.0" />
          </VBox.margin>
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <GridPane alignment="CENTER" layoutX="100.0" prefHeight="136.0" prefWidth="402.0">
+      <GridPane alignment="CENTER" layoutX="100.0" prefHeight="151.0" prefWidth="582.0" VBox.vgrow="ALWAYS">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -32,8 +32,8 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="26.0" valignment="CENTER" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="138.0" minHeight="0.0" prefHeight="44.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="138.0" minHeight="0.0" prefHeight="94.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <ImageView fx:id="house1Image" fitHeight="100.0" fitWidth="100.0" onMouseReleased="#placeCard" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
@@ -64,25 +64,37 @@
                <image>
                   <Image url="@../resources/images/houseDefault.png" />
                </image></ImageView>
-            <Label fx:id="house1Total" alignment="CENTER" contentDisplay="CENTER" text="House 1:">
+            <Label fx:id="house1Total" alignment="CENTER" contentDisplay="CENTER" text="House 1:" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="10.0" />
-               </GridPane.margin></Label>
-            <Label fx:id="house2Total" text="House 2:" GridPane.columnIndex="1">
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label fx:id="house2Total" text="House 2:" GridPane.columnIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="10.0" />
-               </GridPane.margin></Label>
-            <Label fx:id="house3Total" text="House 3:" GridPane.columnIndex="2">
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label fx:id="house3Total" text="House 3:" GridPane.columnIndex="2" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="10.0" />
-               </GridPane.margin></Label>
-            <Label fx:id="house4Total" text="House 4" GridPane.columnIndex="3">
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label fx:id="house4Total" text="House 4:" GridPane.columnIndex="3" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="10.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
          </children>
          <VBox.margin>
-            <Insets top="60.0" />
+            <Insets top="70.0" />
          </VBox.margin>
       </GridPane>
       <ImageView fx:id="currentCard" fitHeight="97.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">

@@ -64,22 +64,37 @@ public class Controller implements Initializable {
 
         clearHouseIfPlayerScoresAndAddPoints(currentHouseTotal, imageView); // clear house and award player
         closeHouse(game.getPlayer().getChoice(), imageView); // close house when over 31
-        showCurrentCard(); // show the current card at the bottom
+        //showCurrentCard(); // show the current card at the bottom
 
         // WORK IN PROGRESS - draw a new window when player wins/loses and ask to play again or exit, also make images unclickable
         if (house1Image.isDisable() && house2Image.isDisable() && house3Image.isDisable() && house4Image.isDisable()) {
             System.out.println("You lose");
-            for(int i = 0; i < game.getBoard().length; i++){ // we can put this in a method since it is repeated below
-                closeHouse(i , imageView);
-            }
+//            for(int i = 0; i < game.getBoard().length; i++){ // we can put this in a method since it is repeated below
+//                closeHouse(i , imageView);
+//            }
+
+            house1Image.setDisable(true);
+            house2Image.setDisable(true);
+            house3Image.setDisable(true);
+            house4Image.setDisable(true);
             gameEnd(false);
 
         } else if (game.getRound() == 40) {
             System.out.println("You win");
-            for(int i = 0; i < game.getBoard().length; i++){
-                closeHouse(i , imageView);
-            }
+//            for(int i = 0; i < game.getBoard().length; i++){
+//                closeHouse(i , imageView);
+//            }
+            house1Image.setDisable(true);
+            house2Image.setDisable(true);
+            house3Image.setDisable(true);
+            house4Image.setDisable(true);
             gameEnd(true);
+        }
+        if(game.getRound() < 40){// IF ROUND IS 40 PREVENT FROM DRAWING CARD
+            showCurrentCard();
+            // show the current card at the bottom, NEED TO PLACE THE METHOD AFTER THE  IF ELSE
+            //BECAUSE IF IT WAS BEFORE, HOUSE IMAGES ARE DISABLED AT ROUND 39 BECAUSE
+            //WHEN CLICKING TO PLACE THE SECOND TO LAST CARD ROUND INCREASES TO 40, HOUSES ARE DISABLED AND YOU CANT PLACE THE LAST CARD
         }
 
     }
@@ -98,7 +113,7 @@ public class Controller implements Initializable {
         game.getPlayer().setChoice(choice);
         replaceCard(houseImage);
         currentCardValue = game.getBoard()[game.getPlayer().getChoice()].addPoints(game.getPlayer().getCurrentCard().getValue());
-        houseTotal.setText("House " + (choice + 1) + " total: "  + game.getBoard()[choice].calculateSumOfHouse());
+        houseTotal.setText("House " + (choice + 1) + " \ntotal: "  + game.getBoard()[choice].calculateSumOfHouse());
     }
 
     public void closeHouse(int choice, ImageView houseImage){ // closes the house, changes the image and makes it disabled
@@ -113,7 +128,7 @@ public class Controller implements Initializable {
             game.getBoard()[game.getPlayer().getChoice()].clearHouse();                // clear that house
             game.getPlayer().addPointsToPlayer();                                     // add 100 points to the player
             playerPoints.setText("Player points: " + game.getPlayer().getPoints());  // change the label of the player's score
-            label.setText("House " + (game.getPlayer().getChoice() + 1) + " total: 0"); // change the label of the house's total
+            label.setText("House " + (game.getPlayer().getChoice() + 1) + " \ntotal: 0"); // change the label of the house's total
             imageView.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png"))); // set house image to the default one
         }
     }
