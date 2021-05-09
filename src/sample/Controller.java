@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,7 +18,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-    public VBox vbox;
+    @FXML private VBox vbox;
     @FXML private Label currentHouseTotal;
     @FXML private Label playerPoints;
     @FXML private Label cardsLeft;
@@ -133,6 +134,9 @@ public class Controller implements Initializable {
     public void gameEnd(boolean won) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("endStage.fxml"));
         Stage endStage = new Stage();
+//        EndStageController endStageController = new EndStageController();
+
+
         if(won){
             endStage.setTitle("win"); //create a window when you win
         } else{
@@ -142,6 +146,10 @@ public class Controller implements Initializable {
         }
         endStage.setScene(new Scene(root, 450, 350)); // window is on top of the main game window
         endStage.show();
+//        if (endStageController.isFlag()) {
+//            resetGame();
+//        }
+//        System.out.println(endStageController.isFlag());
     }
 
     public void resetGame() {
@@ -153,6 +161,13 @@ public class Controller implements Initializable {
         house3Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
         house4Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
         game.setRound(0);
+        cardsLeft.setText("Cards left: 40");
+        house1Total.setText("House \ntotal: 0");
+        house2Total.setText("House \ntotal: 0");
+        house3Total.setText("House \ntotal: 0");
+        house4Total.setText("House \ntotal: 0");
+        playerPoints.setText("Player points: 0");
+
         for(House house : game.getBoard()) {
             house.getPointsHistory().clear();
         }
@@ -166,6 +181,8 @@ public class Controller implements Initializable {
         house3Image.setDisable(value);
         house4Image.setDisable(value);
     }
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

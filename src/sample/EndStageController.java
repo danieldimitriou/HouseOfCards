@@ -8,13 +8,24 @@ import java.util.ResourceBundle;
 
 public class EndStageController implements Initializable {
 
+    public EndStageController() {
+    }
+
+    private boolean flag = true;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
-    public void resetGame(ActionEvent actionEvent) {
+    public void playAgainButton(ActionEvent actionEvent) {
+        flag = false;
+        System.out.println(flag);
+    }
+
+    public boolean isFlag() {
+        return flag;
     }
 
     public void quit(ActionEvent actionEvent) {
