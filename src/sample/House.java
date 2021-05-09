@@ -40,6 +40,10 @@ public class House {
         return flag;
     }
 
+    // Getter
+    public ArrayList<Integer> getPointsHistory() {
+        return pointsHistory;
+    }
 
     //toString method
     @Override

@@ -40,6 +40,12 @@ public class Deck {
         return deckArray[n];
     }
 
+    public void resetDeck() {
+        for (Card card : deckArray) {
+            card.setPlayed(false);
+        }
+    }
+
     @Override
     public String toString() {
         return Arrays.toString(deckArray);

@@ -11,6 +11,9 @@ public class EndStageController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+
+    }
+
+    public void resetGame(ActionEvent actionEvent) {
     }
 }

@@ -53,6 +53,11 @@ public class Game {
         return i;
     }
 
+    // Setter
+    public void setRound(int round) {
+        this.round = round;
+    }
+
     //toString method
     @Override
     public String toString() {

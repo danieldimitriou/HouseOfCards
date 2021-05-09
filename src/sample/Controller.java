@@ -42,6 +42,8 @@ public class Controller implements Initializable {
     private Game game = new Game();
     @FXML private int currentCardValue;
 
+    public Controller() {
+    }
 
     public void placeCard(MouseEvent mouseEvent) throws IOException {
 
@@ -73,10 +75,7 @@ public class Controller implements Initializable {
 //                closeHouse(i , imageView);
 //            }
 
-            house1Image.setDisable(true);
-            house2Image.setDisable(true);
-            house3Image.setDisable(true);
-            house4Image.setDisable(true);
+            disableImages(true);
             gameEnd(false);
 
 
@@ -85,10 +84,7 @@ public class Controller implements Initializable {
 //            for(int i = 0; i < game.getBoard().length; i++){
 //                closeHouse(i , imageView);
 //            }
-            house1Image.setDisable(true);
-            house2Image.setDisable(true);
-            house3Image.setDisable(true);
-            house4Image.setDisable(true);
+            disableImages(true);
             gameEnd(true);
         }
         if(game.getRound() < 40){// IF ROUND IS 40 PREVENT FROM DRAWING CARD
@@ -148,8 +144,28 @@ public class Controller implements Initializable {
         endStage.show();
     }
 
+    public void resetGame() {
+        game.getPlayer().setPoints(0);
+        game.getDeck().resetDeck();
+        disableImages(false);
+        house1Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
+        house2Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
+        house3Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
+        house4Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
+        game.setRound(0);
+        for(House house : game.getBoard()) {
+            house.getPointsHistory().clear();
+        }
 
 
+    }
+
+    public void disableImages(boolean value) {
+        house1Image.setDisable(value);
+        house2Image.setDisable(value);
+        house3Image.setDisable(value);
+        house4Image.setDisable(value);
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
