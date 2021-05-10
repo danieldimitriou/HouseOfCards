@@ -174,6 +174,9 @@ public class Controller implements Initializable {
 
 
     }
+    public void quitGame(ActionEvent actionEvent){
+        System.exit(0);
+    }
 
     public void disableImages(boolean value) {
         house1Image.setDisable(value);
