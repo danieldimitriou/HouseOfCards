@@ -8,9 +8,24 @@
 
 <VBox fx:id="vbox" nodeOrientation="LEFT_TO_RIGHT" prefHeight="485.0" prefWidth="586.0" stylesheets="@../resources/styles/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
+      <VBox alignment="TOP_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="586.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#resetGame" text="Reset">
+               <VBox.margin>
+                  <Insets right="60.0" top="10.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#quitGame" text="Quit">
+               <VBox.margin>
+                  <Insets top="-25.0" />
+               </VBox.margin></Button>
+         </children>
+         <padding>
+            <Insets right="10.0" top="10.0" />
+         </padding>
+      </VBox>
       <Label fx:id="cardsLeft" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="205.0" stylesheets="@../resources/styles/style.css" text="Cards left:" textFill="#9d00ff" wrapText="true">
          <VBox.margin>
-            <Insets left="10.0" top="10.0" />
+            <Insets left="10.0" top="-30.0" />
          </VBox.margin>
          <font>
             <Font name="System Bold" size="24.0" />
@@ -24,16 +39,6 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" onAction="#resetGame" text="Button">
-         <VBox.margin>
-            <Insets left="350.0" top="-80.0" />
-         </VBox.margin>
-      </Button>
-      <Button layoutX="360.0" layoutY="21.0" mnemonicParsing="false" onAction="#resetGame" text="Button">
-         <VBox.margin>
-            <Insets left="400420.0" top="-20.0" />
-         </VBox.margin>
-      </Button>
       <GridPane alignment="CENTER" layoutX="100.0" prefHeight="151.0" prefWidth="582.0" VBox.vgrow="ALWAYS">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -76,32 +81,33 @@
                </image></ImageView>
             <Label fx:id="house1Total" alignment="CENTER" contentDisplay="CENTER" text="House 1:" GridPane.valignment="TOP">
                <GridPane.margin>
-                  <Insets left="10.0" top="23.0" />
+                  <Insets left="10.0" />
                </GridPane.margin>
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
             <Label fx:id="house2Total" text="House 2:" GridPane.columnIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
-                  <Insets left="10.0" top="23.0" />
+                  <Insets left="10.0" />
                </GridPane.margin>
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
             <Label fx:id="house3Total" text="House 3:" GridPane.columnIndex="2" GridPane.valignment="TOP">
                <GridPane.margin>
-                  <Insets left="10.0" top="23.0" />
+                  <Insets left="10.0" />
                </GridPane.margin>
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
             <Label fx:id="house4Total" text="House 4:" GridPane.columnIndex="3" GridPane.valignment="TOP">
                <GridPane.margin>
-                  <Insets left="10.0" top="23.0" />
+                  <Insets left="10.0" />
                </GridPane.margin>
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
          </children>
          <VBox.margin>
             <Insets top="70.0" />

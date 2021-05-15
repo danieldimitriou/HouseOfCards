@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 
 
+
 /*
 AUTHORS:
 DIONYSHS PETROTOS, dpetrotos@athtech.gr
@@ -18,6 +19,8 @@ STEFAN BORDEA, stefan@stefanbordea.com
 
 public class Main extends Application {
 
+    private static Stage currentStage;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -25,6 +28,12 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.setResizable(false);
         primaryStage.show();
+        currentStage = primaryStage;
+
+    }
+
+    public static Stage getCurrentStage() {
+        return currentStage;
     }
 
     public static void main(String[] args) {

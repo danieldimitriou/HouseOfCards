@@ -40,7 +40,7 @@ public class Controller implements Initializable {
     private Label house4Total;
     @FXML
     private ImageView currentCard;
-    private Game game = new Game();
+    protected Game game = new Game();
     @FXML private int currentCardValue;
 
     public Controller() {
@@ -67,24 +67,18 @@ public class Controller implements Initializable {
 
         clearHouseIfPlayerScoresAndAddPoints(currentHouseTotal, imageView); // clear house and award player
         closeHouse(game.getPlayer().getChoice(), imageView); // close house when over 31
-        //showCurrentCard(); // show the current card at the bottom
 
-        // WORK IN PROGRESS - draw a new window when player wins/loses and ask to play again or exit, also make images unclickable
+
+        //draw a new window when player wins/loses and ask to play again or exit, also make images unclickable
         if (house1Image.isDisable() && house2Image.isDisable() && house3Image.isDisable() && house4Image.isDisable()) {
-            System.out.println("You lose");
-//            for(int i = 0; i < game.getBoard().length; i++){ // we can put this in a method since it is repeated below
-//                closeHouse(i , imageView);
-//            }
+
 
             disableImages(true);
             gameEnd(false);
 
 
         } else if (game.getRound() == 40) {
-            System.out.println("You win");
-//            for(int i = 0; i < game.getBoard().length; i++){
-//                closeHouse(i , imageView);
-//            }
+
             disableImages(true);
             gameEnd(true);
         }
@@ -134,7 +128,7 @@ public class Controller implements Initializable {
     public void gameEnd(boolean won) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("endStage.fxml"));
         Stage endStage = new Stage();
-//        EndStageController endStageController = new EndStageController();
+
 
 
         if(won){
@@ -146,13 +140,11 @@ public class Controller implements Initializable {
         }
         endStage.setScene(new Scene(root, 450, 350)); // window is on top of the main game window
         endStage.show();
-//        if (endStageController.isFlag()) {
-//            resetGame();
-//        }
-//        System.out.println(endStageController.isFlag());
+
     }
 
     public void resetGame() {
+
         game.getPlayer().setPoints(0);
         game.getDeck().resetDeck();
         disableImages(false);
