@@ -71,14 +71,9 @@ public class Controller implements Initializable {
 
         //draw a new window when player wins/loses and ask to play again or exit, also make images unclickable
         if (house1Image.isDisable() && house2Image.isDisable() && house3Image.isDisable() && house4Image.isDisable()) {
-
-
             disableImages(true);
             gameEnd(false);
-
-
         } else if (game.getRound() == 40) {
-
             disableImages(true);
             gameEnd(true);
         }
@@ -110,7 +105,7 @@ public class Controller implements Initializable {
 
     public void closeHouse(int choice, ImageView houseImage){ // closes the house, changes the image and makes it disabled
         if(game.getBoard()[choice].isClosed()){
-            houseImage.setImage(new Image(getClass().getResourceAsStream("/resources/images/stop.jpeg")));
+            houseImage.setImage(new Image(getClass().getResourceAsStream("/resources/images/stop.png")));
             houseImage.setDisable(true);
         }
     }
@@ -128,19 +123,15 @@ public class Controller implements Initializable {
     public void gameEnd(boolean won) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("endStage.fxml"));
         Stage endStage = new Stage();
-
-
-
         if(won){
-            endStage.setTitle("win"); //create a window when you win
+            endStage.setTitle("YOU WIN!"); //create a window when you win
         } else{
-            endStage.setTitle("lose"); //create an other window when you lose
+            endStage.setTitle("YOU LOSE!"); //create an other window when you lose
             game.getPlayer().setPoints(0);
             playerPoints.setText("Player points: 0");
         }
         endStage.setScene(new Scene(root, 450, 350)); // window is on top of the main game window
         endStage.show();
-
     }
 
     public void resetGame() {

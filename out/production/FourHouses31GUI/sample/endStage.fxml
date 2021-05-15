@@ -3,23 +3,40 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EndStageController">
-   <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-   </rowConstraints>
+<VBox alignment="CENTER" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EndStageController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
-      <Button mnemonicParsing="false" onAction="#playAgainButton" text="Yes" />
-      <Button mnemonicParsing="false" onAction="#quit" text="No">
-         <GridPane.margin>
-            <Insets bottom="150.0" left="150.0" right="150.0" top="150.0" />
-         </GridPane.margin>
-      </Button>
+      <Label fx:id="result" text="Play Again?">
+         <font>
+            <Font size="32.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="150.0" />
+         </VBox.margin>
+      </Label>
+      <VBox alignment="CENTER">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#playAgainButton" text="Yes">
+               <opaqueInsets>
+                  <Insets left="120.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets right="75.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#quit" text="No">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="75.0" top="-26.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="120.0" />
+         </VBox.margin>
+      </VBox>
    </children>
-</GridPane>
+</VBox>

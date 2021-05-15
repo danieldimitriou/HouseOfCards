@@ -4,9 +4,9 @@
 }
 
 .label {
-    -fx-font-family: "Spongeboytt2";
+    -fx-font-family: "";
 }
 
 .button {
-             -fx-font-family: "Spongeboytt2";
+             -fx-focus-color: transparent;
       }

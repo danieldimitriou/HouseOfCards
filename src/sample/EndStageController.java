@@ -20,24 +20,17 @@ public class EndStageController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        if(game.getRound() < 40)
 
     }
 
     public void playAgainButton(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Stage stage = Main.getCurrentStage();
-        stage.setScene(new Scene(root, 500, 500));
+        stage.setScene(new Scene(root, 1000, 1000));
         stage.setResizable(false);
         stage.show();
-
-
         ((Node) actionEvent.getSource()).getScene().getWindow().hide();
-
     }
-
-
-
 
 
     public void quit(ActionEvent actionEvent) {

@@ -10,36 +10,36 @@
    <children>
       <VBox alignment="TOP_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="586.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#resetGame" text="Reset">
+            <Button depthTest="DISABLE" mnemonicParsing="false" onAction="#resetGame" text="Reset">
                <VBox.margin>
                   <Insets right="60.0" top="10.0" />
                </VBox.margin></Button>
             <Button mnemonicParsing="false" onAction="#quitGame" text="Quit">
                <VBox.margin>
-                  <Insets top="-25.0" />
+                  <Insets top="-26.0" />
                </VBox.margin></Button>
          </children>
          <padding>
             <Insets right="10.0" top="10.0" />
          </padding>
       </VBox>
-      <Label fx:id="cardsLeft" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="205.0" stylesheets="@../resources/styles/style.css" text="Cards left:" textFill="#9d00ff" wrapText="true">
+      <Label fx:id="cardsLeft" alignment="TOP_LEFT" prefHeight="61.0" prefWidth="418.0" stylesheets="@../resources/styles/style.css" text="Cards left:" textFill="WHITE" wrapText="true">
          <VBox.margin>
             <Insets left="10.0" top="-30.0" />
          </VBox.margin>
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="50.0" />
          </font>
       </Label>
-      <Label fx:id="playerPoints" alignment="TOP_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="30.0" prefWidth="244.0" text="Player points:" textFill="#9d00ff" wrapText="true">
+      <Label fx:id="playerPoints" alignment="TOP_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="61.0" prefWidth="563.0" text="Player points:" textFill="WHITE" wrapText="true">
          <VBox.margin>
             <Insets left="10.0" top="10.0" />
          </VBox.margin>
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="50.0" />
          </font>
       </Label>
-      <GridPane alignment="CENTER" layoutX="100.0" prefHeight="151.0" prefWidth="582.0" VBox.vgrow="ALWAYS">
+      <GridPane alignment="CENTER" layoutX="100.0" prefHeight="476.0" prefWidth="586.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -47,75 +47,74 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints maxHeight="138.0" minHeight="0.0" prefHeight="44.0" valignment="CENTER" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="138.0" minHeight="0.0" prefHeight="94.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="138.0" minHeight="0.0" prefHeight="51.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="138.0" minHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <ImageView fx:id="house1Image" fitHeight="100.0" fitWidth="100.0" onMouseReleased="#placeCard" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+            <ImageView fx:id="house1Image" fitHeight="331.0" fitWidth="120.0" onMouseReleased="#placeCard" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                <image>
                   <Image url="@../resources/images/houseDefault.png" />
                </image>
                <GridPane.margin>
-                  <Insets left="15.0" />
+                  <Insets left="20.0" />
                </GridPane.margin></ImageView>
-            <ImageView fx:id="house2Image" fitHeight="100.0" fitWidth="100.0" layoutX="10.0" layoutY="74.0" onMouseReleased="#placeCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ImageView fx:id="house2Image" fitHeight="331.0" fitWidth="120.0" layoutX="10.0" layoutY="74.0" onMouseReleased="#placeCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="15.0" />
+                  <Insets left="20.0" />
                </GridPane.margin>
                <image>
                   <Image url="@../resources/images/houseDefault.png" />
                </image></ImageView>
-            <ImageView fx:id="house3Image" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="74.0" onMouseReleased="#placeCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <ImageView fx:id="house3Image" fitHeight="331.0" fitWidth="120.0" layoutX="110.0" layoutY="74.0" onMouseReleased="#placeCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="15.0" />
+                  <Insets left="20.0" />
                </GridPane.margin>
                <image>
                   <Image url="@../resources/images/houseDefault.png" />
                </image></ImageView>
-            <ImageView fx:id="house4Image" fitHeight="100.0" fitWidth="100.0" layoutX="210.0" layoutY="74.0" onMouseReleased="#placeCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <ImageView fx:id="house4Image" fitHeight="331.0" fitWidth="120.0" layoutX="210.0" layoutY="74.0" onMouseReleased="#placeCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="15.0" />
+                  <Insets left="20.0" />
                </GridPane.margin>
                <image>
                   <Image url="@../resources/images/houseDefault.png" />
                </image></ImageView>
-            <Label fx:id="house1Total" alignment="CENTER" contentDisplay="CENTER" text="House 1:" GridPane.valignment="TOP">
+            <Label fx:id="house1Total" alignment="CENTER" contentDisplay="CENTER" text="House 1:" textFill="WHITE" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="44.0" />
                </font></Label>
-            <Label fx:id="house2Total" text="House 2:" GridPane.columnIndex="1" GridPane.valignment="TOP">
+            <Label fx:id="house2Total" text="House 2:" textFill="WHITE" GridPane.columnIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="44.0" />
                </font></Label>
-            <Label fx:id="house3Total" text="House 3:" GridPane.columnIndex="2" GridPane.valignment="TOP">
+            <Label fx:id="house3Total" text="House 3:" textFill="WHITE" GridPane.columnIndex="2" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="44.0" />
                </font></Label>
-            <Label fx:id="house4Total" text="House 4:" GridPane.columnIndex="3" GridPane.valignment="TOP">
+            <Label fx:id="house4Total" text="House 4:" textFill="WHITE" GridPane.columnIndex="3" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="44.0" />
                </font></Label>
-            <VBox prefHeight="200.0" prefWidth="100.0" />
          </children>
          <VBox.margin>
             <Insets top="70.0" />
          </VBox.margin>
       </GridPane>
-      <ImageView fx:id="currentCard" fitHeight="97.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="currentCard" fitHeight="331.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
          <VBox.margin>
-            <Insets left="200.0" top="100.0" />
+            <Insets left="400.0" top="100.0" />
          </VBox.margin>
       </ImageView>
    </children>
