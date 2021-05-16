@@ -40,7 +40,7 @@ public class Controller implements Initializable {
     private Label house4Total;
     @FXML
     private ImageView currentCard;
-    protected Game game = new Game();
+    private static Game game = new Game();
     @FXML private int currentCardValue;
 
     public Controller() {
@@ -132,28 +132,22 @@ public class Controller implements Initializable {
         }
         endStage.setScene(new Scene(root, 450, 350)); // window is on top of the main game window
         endStage.show();
+        endStage.setAlwaysOnTop(true);
     }
 
     public void resetGame() {
 
-        game.getPlayer().setPoints(0);
-        game.getDeck().resetDeck();
-        disableImages(false);
+        game.reset();
         house1Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
         house2Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
         house3Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
         house4Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
-        game.setRound(0);
         cardsLeft.setText("Cards left: 40");
         house1Total.setText("House \ntotal: 0");
         house2Total.setText("House \ntotal: 0");
         house3Total.setText("House \ntotal: 0");
         house4Total.setText("House \ntotal: 0");
         playerPoints.setText("Player points: 0");
-
-        for(House house : game.getBoard()) {
-            house.getPointsHistory().clear();
-        }
 
 
     }
@@ -168,7 +162,9 @@ public class Controller implements Initializable {
         house4Image.setDisable(value);
     }
 
-
+    public static Game getGame() {
+        return game;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

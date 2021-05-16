@@ -20,6 +20,15 @@ public class Game {
         }
     }
 
+    public void reset () {
+        player.setPoints(0);
+        deck.resetDeck();
+        round = 0;
+        for(House house : board) {
+            house.getPointsHistory().clear();
+        }
+    }
+
     // Getter
     public Player getPlayer() {
         return player;
