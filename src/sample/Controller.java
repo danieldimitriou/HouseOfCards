@@ -136,22 +136,22 @@ public class Controller implements Initializable {
     }
 
     public void resetGame() {
-
+        Image defaultImage = new Image("/resources/images/houseDefault.png");
+        String total0 = "House \ntotal: 0";
         game.reset();
-        house1Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
-        house2Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
-        house3Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
-        house4Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
+        house1Image.setImage(defaultImage);
+        house2Image.setImage(defaultImage);
+        house3Image.setImage(defaultImage);
+        house4Image.setImage(defaultImage);
         disableImages(false);
         cardsLeft.setText("Cards left: 40");
-        house1Total.setText("House \ntotal: 0");
-        house2Total.setText("House \ntotal: 0");
-        house3Total.setText("House \ntotal: 0");
-        house4Total.setText("House \ntotal: 0");
+        house1Total.setText(total0);
+        house2Total.setText(total0);
+        house3Total.setText(total0);
+        house4Total.setText(total0);
         playerPoints.setText("Player points: 0");
-
-
     }
+
     public void quitGame(ActionEvent actionEvent){
         System.exit(0);
     }
