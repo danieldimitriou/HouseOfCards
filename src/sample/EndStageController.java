@@ -21,7 +21,7 @@ public class EndStageController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (Controller.getGame().getRound() == 40) { //need to fix for when player loses at last round !!!!
+        if (Controller.getGame().getRound() == 40) {//need to fix for when player loses at last round!! maybe check if all houses are over 31
             resultLabel.setText("You win with " + Controller.getGame().getPlayer().getPoints() + " points");
         } else {
             resultLabel.setText("You lost");

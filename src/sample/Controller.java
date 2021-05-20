@@ -142,6 +142,7 @@ public class Controller implements Initializable {
         house2Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
         house3Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
         house4Image.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png")));
+        disableImages(false);
         cardsLeft.setText("Cards left: 40");
         house1Total.setText("House \ntotal: 0");
         house2Total.setText("House \ntotal: 0");
