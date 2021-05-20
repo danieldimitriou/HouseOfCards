@@ -40,8 +40,8 @@ public class Controller implements Initializable {
     private Label house4Total;
     @FXML
     private ImageView currentCard;
-    private Image defaultImage = new Image("/resources/images/houseDefault.png");
-    private String total0 = "House \ntotal: 0";
+    private static Image defaultHouseImage = new Image(Controller.class.getResourceAsStream("/resources/images/houseDefault.png"));
+    private static Image stopImage = new Image(Controller.class.getResourceAsStream("/resources/images/stop.png"));
     private static Game game = new Game();
     @FXML private int currentCardValue;
 
@@ -91,11 +91,11 @@ public class Controller implements Initializable {
     public void showCurrentCard() {
         game.getPlayer().setCurrentCard(game.getDeck().drawCard()); // draws a card from the deck arraylist and sets it as the current card
         cardsLeft.setText("Cards left: " + (game.cardsLeft() + 1)); // when card is drawn, decrease card counter by 1
-        currentCard.setImage(new Image(getClass().getResourceAsStream("/resources/images/" + game.getCardIndex() + ".png"))); // shows the card that is drawn from the deck arraylist
+        currentCard.setImage(game.getDeck().getDeckImages()[game.getCardIndex()]); // shows the card that is drawn from the deck arraylist
     }
 
     public void replaceCard(ImageView imageView) { //sets the card in the chosen house
-        imageView.setImage(new Image(getClass().getResourceAsStream("/resources/images/" + game.getCardIndex() + ".png")));
+        imageView.setImage(game.getDeck().getDeckImages()[game.getCardIndex()]);
     }
 
     public void playRound(int choice, Label houseTotal, ImageView houseImage){ // sets the total amount on each house
@@ -107,7 +107,7 @@ public class Controller implements Initializable {
 
     public void closeHouse(int choice, ImageView houseImage){ // closes the house, changes the image and makes it disabled
         if(game.getBoard()[choice].isClosed()){
-            houseImage.setImage(new Image(getClass().getResourceAsStream("/resources/images/stop.png")));
+            houseImage.setImage(stopImage);
             houseImage.setDisable(true);
         }
     }
@@ -118,7 +118,7 @@ public class Controller implements Initializable {
             game.getPlayer().addPointsToPlayer();                                     // add 100 points to the player
             playerPoints.setText("Player points: " + game.getPlayer().getPoints());  // change the label of the player's score
             label.setText("House " + (game.getPlayer().getChoice() + 1) + " \ntotal: 0"); // change the label of the house's total
-            imageView.setImage(new Image(getClass().getResourceAsStream("/resources/images/houseDefault.png"))); // set house image to the default one
+            imageView.setImage(defaultHouseImage); // set house image to the default one
         }
     }
 
@@ -138,20 +138,21 @@ public class Controller implements Initializable {
     }
 
     public void resetGame() {
+
         game.reset();
-        house1Image.setImage(defaultImage);
-        house2Image.setImage(defaultImage);
-        house3Image.setImage(defaultImage);
-        house4Image.setImage(defaultImage);
+        house1Image.setImage(defaultHouseImage);
+        house2Image.setImage(defaultHouseImage);
+        house3Image.setImage(defaultHouseImage);
+        house4Image.setImage(defaultHouseImage);
         disableImages(false);
         cardsLeft.setText("Cards left: 40");
-        house1Total.setText(total0);
-        house2Total.setText(total0);
-        house3Total.setText(total0);
-        house4Total.setText(total0);
+        house1Total.setText("House \ntotal: 0");
+        house2Total.setText("House \ntotal: 0");
+        house3Total.setText("House \ntotal: 0");
+        house4Total.setText("House \ntotal: 0");
         playerPoints.setText("Player points: 0");
-    }
 
+    }
     public void quitGame(ActionEvent actionEvent){
         System.exit(0);
     }

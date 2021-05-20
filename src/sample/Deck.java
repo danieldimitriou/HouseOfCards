@@ -1,11 +1,14 @@
 package sample;
 
+import javafx.scene.image.Image;
+
 import java.util.Arrays;
 import java.util.Random;
 
 public class Deck {
     //Fields
     private Card[] deckArray = new Card[40];
+    private Image[] deckImages = new Image[40];
 
     // Constructor
     public Deck(){ //cards 0-9 are Hearts, 10-19 Clubs, 20-29 Diamonds, 30-39 spades
@@ -22,12 +25,17 @@ public class Deck {
             else if(i <= 39){
                 deckArray[i] = new Card('S', i - 28);
             }
+            deckImages[i] = new Image(getClass().getResourceAsStream("/resources/images/" + i + ".png"));
         }
     }
 
     //Getters
     public Card[] getDeckArray() {
         return deckArray;
+    }
+
+    public Image[] getDeckImages() {
+        return deckImages;
     }
 
     public Card drawCard(){ // draws a random card based on the deck array 0-39
