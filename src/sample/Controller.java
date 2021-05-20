@@ -40,6 +40,8 @@ public class Controller implements Initializable {
     private Label house4Total;
     @FXML
     private ImageView currentCard;
+    private Image defaultImage = new Image("/resources/images/houseDefault.png");
+    private String total0 = "House \ntotal: 0";
     private static Game game = new Game();
     @FXML private int currentCardValue;
 
@@ -136,8 +138,6 @@ public class Controller implements Initializable {
     }
 
     public void resetGame() {
-        Image defaultImage = new Image("/resources/images/houseDefault.png");
-        String total0 = "House \ntotal: 0";
         game.reset();
         house1Image.setImage(defaultImage);
         house2Image.setImage(defaultImage);
