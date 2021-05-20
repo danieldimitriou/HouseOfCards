@@ -17,7 +17,6 @@ import java.util.ResourceBundle;
 public class EndStageController implements Initializable {
 
     @FXML private Label resultLabel;
-    @FXML private Label result;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
