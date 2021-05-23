@@ -43,10 +43,19 @@ public class Controller implements Initializable {
     private static Image defaultHouseImage = new Image(Controller.class.getResourceAsStream("/resources/images/houseDefault.png"));
     private static Image stopImage = new Image(Controller.class.getResourceAsStream("/resources/images/stop.png"));
     private static Game game = new Game();
+    private static BackgroundSize backgroundSize = new BackgroundSize(500,
+            500,
+            false,
+            false,
+            false,
+            true);
+    private static BackgroundImage image = new BackgroundImage(new Image("/resources/images/background.jpeg"),
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundPosition.CENTER,
+            backgroundSize);
     @FXML private int currentCardValue;
 
-    public Controller() {
-    }
 
     public void placeCard(MouseEvent mouseEvent) throws IOException {
 
@@ -78,12 +87,12 @@ public class Controller implements Initializable {
         } else if (game.getRound() == 40) {
             disableImages(true);
             gameEnd(true);
+            currentCard.setImage(defaultHouseImage);
+            cardsLeft.setText("Cards left: " + "0");
         }
-        if(game.getRound() < 40){// IF ROUND IS 40 PREVENT FROM DRAWING CARD
+        if(game.getRound() < 40){ // draws a card and shows it only if round < 40
             showCurrentCard();
-            // show the current card at the bottom, NEED TO PLACE THE METHOD AFTER THE  IF ELSE
-            //BECAUSE IF IT WAS BEFORE, HOUSE IMAGES ARE DISABLED AT ROUND 39 BECAUSE
-            //WHEN CLICKING TO PLACE THE SECOND TO LAST CARD ROUND INCREASES TO 40, HOUSES ARE DISABLED AND YOU CANT PLACE THE LAST CARD
+
         }
 
     }
@@ -171,18 +180,6 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showCurrentCard();
-        BackgroundSize backgroundSize = new BackgroundSize(500,
-                500,
-                false,
-                false,
-                false,
-                true);
-        BackgroundImage image = new BackgroundImage(new Image("/resources/images/background.jpeg"),
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.CENTER,
-                backgroundSize);
-
         vbox.setBackground(new Background(image));
     }
 }

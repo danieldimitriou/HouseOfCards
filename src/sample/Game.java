@@ -47,7 +47,7 @@ public class Game {
     }
 
     // Methods
-    public int cardsLeft(){
+    public int cardsLeft(){ // increases round by 1 and returns an int corresponding to how many cards are left
         round++;
         return 40 - round;
     }
@@ -67,9 +67,4 @@ public class Game {
         this.round = round;
     }
 
-    //toString method
-    @Override
-    public String toString() {
-        return "Game{" + "board=" + Arrays.toString(board) + '}';
-    }
 }

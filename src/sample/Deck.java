@@ -1,8 +1,6 @@
 package sample;
 
 import javafx.scene.image.Image;
-
-import java.util.Arrays;
 import java.util.Random;
 
 public class Deck {
@@ -14,16 +12,16 @@ public class Deck {
     public Deck(){ //cards 0-9 are Hearts, 10-19 Clubs, 20-29 Diamonds, 30-39 spades
         for(int i = 0; i < deckArray.length; i++){
             if(i <= 9){
-                deckArray[i] = new Card('H', i + 2);
+                deckArray[i] = new Card(i + 2);
             }
             else if(i <= 19){
-                deckArray[i] = new Card('C', i - 8);
+                deckArray[i] = new Card(i - 8);
             }
             else if(i <= 29){
-                deckArray[i] = new Card('D', i - 18);
+                deckArray[i] = new Card(i - 18);
             }
             else if(i <= 39){
-                deckArray[i] = new Card('S', i - 28);
+                deckArray[i] = new Card(i - 28);
             }
             deckImages[i] = new Image(getClass().getResourceAsStream("/resources/images/" + i + ".png"));
         }
@@ -54,8 +52,4 @@ public class Deck {
         }
     }
 
-    @Override
-    public String toString() {
-        return Arrays.toString(deckArray);
-    }
 }

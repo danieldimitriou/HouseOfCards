@@ -1,13 +1,13 @@
 package sample;
 
 public class Card {
-    private char suit;
+
     private int value;
     private boolean isPlayed = false;
 
 
-    public Card(char suit, int value) {
-        this.suit = suit;
+    public Card(int value) {
+
         this.value = value;
     }
 
@@ -23,8 +23,4 @@ public class Card {
         return value;
     }
 
-    @Override
-    public String toString() {
-        return "" + suit + value;
-    }
 }

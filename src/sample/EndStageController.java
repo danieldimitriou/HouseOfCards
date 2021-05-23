@@ -39,7 +39,8 @@ public class EndStageController implements Initializable {
         Stage stage = Main.getCurrentStage();
         stage.setScene(new Scene(root, 1000, 1000));
         stage.setResizable(false);
-        stage.show();
+        System.gc();
+
 
         ((Node) actionEvent.getSource()).getScene().getWindow().hide();
     }

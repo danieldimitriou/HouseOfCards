@@ -45,9 +45,4 @@ public class House {
         return pointsHistory;
     }
 
-    //toString method
-    @Override
-    public String toString() {
-        return "House{Total = " + calculateSumOfHouse() + " pointsHistory=" + pointsHistory + '}';
-    }
 }

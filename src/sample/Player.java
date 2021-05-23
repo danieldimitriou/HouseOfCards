@@ -48,11 +48,4 @@ public class Player {
         return choice;
     }
 
-    @Override
-    public String toString() {
-        return "Player{" +
-                "points=" + points +
-                ", currentCard=" + currentCard +
-                '}';
-    }
 }
