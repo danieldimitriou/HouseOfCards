@@ -12,7 +12,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -40,8 +39,8 @@ public class Controller implements Initializable {
     private Label house4Total;
     @FXML
     private ImageView currentCard;
-    private static Image defaultHouseImage = new Image(Controller.class.getResourceAsStream("/resources/images/houseDefault.png"));
-    private static Image stopImage = new Image(Controller.class.getResourceAsStream("/resources/images/stop.png"));
+    private static Image defaultHouseImage = new Image("/resources/images/houseDefault.png");
+    private static Image stopImage = new Image("/resources/images/stop.png");
     private static Game game = new Game();
     private static BackgroundSize backgroundSize = new BackgroundSize(500,
             500,
