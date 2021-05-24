@@ -3,13 +3,28 @@ package sample;
 import javafx.scene.image.Image;
 import java.util.Random;
 
+/**
+ * This is the deck class.
+ * The deck is characterised by the deck array and the deck images.
+ */
+
 public class Deck {
-    //Fields
+    /**
+     * This is a private deckArray attribute of type Card array for the deck of cards.
+     */
     private Card[] deckArray = new Card[40];
+
+    /**
+     * This is a private deckImages attribute of type Image array for the images of the cards.
+     */
     private Image[] deckImages = new Image[40];
 
-    // Constructor
-    public Deck(){ //cards 0-9 are Hearts, 10-19 Clubs, 20-29 Diamonds, 30-39 spades
+    /**
+     * The non-default constructor accepts no parameters.
+     * It matches the cards with their images.
+     * Cards 0-9 are Hearts, 10-19 Clubs, 20-29 Diamonds, 30-39 Spades
+     */
+    public Deck(){
         for(int i = 0; i < deckArray.length; i++){
             if(i <= 9){
                 deckArray[i] = new Card(i + 2);
@@ -27,29 +42,43 @@ public class Deck {
         }
     }
 
-    //Getters
+    /**
+     * This method returns the deck array
+     * @return the deck array.
+     */
     public Card[] getDeckArray() {
         return deckArray;
     }
 
+    /**
+     * This method returns the deck's card images.
+     * @return deck's card images.
+     */
     public Image[] getDeckImages() {
         return deckImages;
     }
 
-    public Card drawCard(){ // draws a random card based on the deck array 0-39
+    /**
+     * This method is used to draw a random card from the deck array.
+     * It checks to only draw cards that are not already drawn and sets the drawn card to be the one being played.
+     * @return the random card drawn
+     */
+    public Card drawCard(){
         Random randomNumber = new Random();
         int n;
         do{
-            n = randomNumber.nextInt(40); // checks and does not draw cards that are already drawn
+            n = randomNumber.nextInt(40);
         }while(deckArray[n].isPlayed());
-        deckArray[n].setPlayed(true); // sets picked card to played
+        deckArray[n].setPlayed(true);
         return deckArray[n];
     }
 
+    /**
+     * This method is used to reset the deck.
+     */
     public void resetDeck() {
         for (Card card : deckArray) {
             card.setPlayed(false);
         }
     }
-
 }

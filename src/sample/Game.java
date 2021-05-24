@@ -30,6 +30,7 @@ public class Game {
 
     /**
      * The non-default constructor accepts no parameters.
+     * It sets the game round to 0, creates a new deck object, a new player object and the four houses.
      */
     public Game() {
         this.round = 0;
