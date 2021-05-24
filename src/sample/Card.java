@@ -18,6 +18,7 @@ public class Card {
 
     /**
      * The non-default constructor accepts one parameter:
+     *
      * @param value the card's value.
      */
     public Card(int value) {
@@ -26,6 +27,7 @@ public class Card {
 
     /**
      * This method is used to determine whether a card has been played or not.
+     *
      * @return true of false depending on whether the card has been played.
      */
     public boolean isPlayed() {
@@ -34,6 +36,7 @@ public class Card {
 
     /**
      * This method is used to set a card to played or not played.
+     *
      * @param played true or false depending on whether the card needs to be played.
      */
     public void setPlayed(boolean played) {
@@ -42,6 +45,7 @@ public class Card {
 
     /**
      * This method returns the value of the card.
+     *
      * @return the value of the card.
      */
     public int getValue() {

@@ -22,6 +22,7 @@ public class House {
 
     /**
      * This method is used to add points to a house when it is not closed.
+     *
      * @param points the points to be added to the house.
      * @return the points that will be added to the house.
      */
@@ -34,6 +35,7 @@ public class House {
 
     /**
      * This method is used to calculate the sum of a house.
+     *
      * @return the sum of the house.
      */
     public int calculateSumOfHouse() {
@@ -46,6 +48,7 @@ public class House {
 
     /**
      * This method is used to check if a house is closed.
+     *
      * @return true or false depending on whether the sum of the house is greater than 31.
      */
     public boolean isClosed() {
@@ -54,6 +57,7 @@ public class House {
 
     /**
      * This method is used to check the total sum of the house and if it is 31, it clears the house.
+     *
      * @return true or false depending on whether the house was cleared or not.
      */
     public boolean clearHouse() {
@@ -67,6 +71,7 @@ public class House {
 
     /**
      * This method returns the points history ArrayList of a house.
+     *
      * @return the points history of the house.
      */
     public ArrayList<Integer> getPointsHistory() {

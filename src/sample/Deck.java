@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.scene.image.Image;
+
 import java.util.Random;
 
 /**
@@ -24,18 +25,15 @@ public class Deck {
      * It matches the cards with their images.
      * Cards 0-9 are Hearts, 10-19 Clubs, 20-29 Diamonds, 30-39 Spades
      */
-    public Deck(){
-        for(int i = 0; i < deckArray.length; i++){
-            if(i <= 9){
+    public Deck() {
+        for (int i = 0; i < deckArray.length; i++) {
+            if (i <= 9) {
                 deckArray[i] = new Card(i + 2);
-            }
-            else if(i <= 19){
+            } else if (i <= 19) {
                 deckArray[i] = new Card(i - 8);
-            }
-            else if(i <= 29){
+            } else if (i <= 29) {
                 deckArray[i] = new Card(i - 18);
-            }
-            else if(i <= 39){
+            } else if (i <= 39) {
                 deckArray[i] = new Card(i - 28);
             }
             deckImages[i] = new Image(getClass().getResourceAsStream("/resources/images/" + i + ".png"));
@@ -44,6 +42,7 @@ public class Deck {
 
     /**
      * This method returns the deck array
+     *
      * @return the deck array.
      */
     public Card[] getDeckArray() {
@@ -52,6 +51,7 @@ public class Deck {
 
     /**
      * This method returns the deck's card images.
+     *
      * @return deck's card images.
      */
     public Image[] getDeckImages() {
@@ -61,14 +61,15 @@ public class Deck {
     /**
      * This method is used to draw a random card from the deck array.
      * It checks to only draw cards that are not already drawn and sets the drawn card to be the one being played.
+     *
      * @return the random card drawn
      */
-    public Card drawCard(){
+    public Card drawCard() {
         Random randomNumber = new Random();
         int n;
-        do{
+        do {
             n = randomNumber.nextInt(40);
-        }while(deckArray[n].isPlayed());
+        } while (deckArray[n].isPlayed());
         deckArray[n].setPlayed(true);
         return deckArray[n];
     }

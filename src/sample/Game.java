@@ -49,13 +49,14 @@ public class Game {
         player.setPoints(0);
         deck.resetDeck();
         round = 0;
-        for(House house : board) {
+        for (House house : board) {
             house.getPointsHistory().clear();
         }
     }
 
     /**
      * This method returns the player object.
+     *
      * @return the player.
      */
     public Player getPlayer() {
@@ -64,6 +65,7 @@ public class Game {
 
     /**
      * This method returns the deck object.
+     *
      * @return the deck.
      */
     public Deck getDeck() {
@@ -72,6 +74,7 @@ public class Game {
 
     /**
      * This method returns the game's round.
+     *
      * @return the round.
      */
     public int getRound() {
@@ -80,6 +83,7 @@ public class Game {
 
     /**
      * This method returns the board array.
+     *
      * @return the board.
      */
     public House[] getBoard() {
@@ -88,9 +92,10 @@ public class Game {
 
     /**
      * This method is used to increase the round by 1 and returns the cards left in the game.
+     *
      * @return cards left in the game.
      */
-    public int cardsLeft(){
+    public int cardsLeft() {
         round++;
         return 40 - round;
     }
@@ -98,6 +103,7 @@ public class Game {
     /**
      * This method is used to get the index of the current card by comparing the current card object of the player
      * with the card object of the deck array.
+     *
      * @return index of current card from the deck.
      */
     public int getCardIndex() {
@@ -112,6 +118,7 @@ public class Game {
 
     /**
      * This method is used to set the game's round.
+     *
      * @param round the new round of the game
      */
     public void setRound(int round) {

@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,22 +29,26 @@ public class Controller implements Initializable {
     /**
      * This is a private VBox attribute for the vbox.
      */
-    @FXML private VBox vbox;
+    @FXML
+    private VBox vbox;
 
     /**
      * This is a private Label attribute for the current house total score.
      */
-    @FXML private Label currentHouseTotal;
+    @FXML
+    private Label currentHouseTotal;
 
     /**
      * This is a private Label attribute for the player's points.
      */
-    @FXML private Label playerPoints;
+    @FXML
+    private Label playerPoints;
 
     /**
      * This is a private Label attribute for the cards left.
      */
-    @FXML private Label cardsLeft;
+    @FXML
+    private Label cardsLeft;
 
     /**
      * This is a private ImageView attribute for the house 1 image.
@@ -102,7 +107,8 @@ public class Controller implements Initializable {
     /**
      * This is a private ImageView attribute for the current card's value.
      */
-    @FXML private int currentCardValue;
+    @FXML
+    private int currentCardValue;
 
     /**
      * This is a private Game attribute where the game object is initialised.
@@ -145,6 +151,7 @@ public class Controller implements Initializable {
      * It closes the house if the player scores more than 31 in a house.
      * It draws a new window by calling the gameEnd method when a player wins or loses and makes the images un-clickable
      * It draws a card and shows it only if the round < 40
+     *
      * @param mouseEvent the mouse click event.
      * @throws IOException IOException for the placeCard method.
      */
@@ -152,33 +159,34 @@ public class Controller implements Initializable {
 
         ImageView imageView = (ImageView) mouseEvent.getSource();
 
-            if (imageView == house1Image) {
-                playRound(0, house1Total, house1Image);
-                currentHouseTotal = house1Total;
-            } else if (imageView == house2Image) {
-                playRound(1, house2Total, house2Image);
-                currentHouseTotal = house2Total;
-            } else if (imageView == house3Image) {
-                playRound(2, house3Total, house3Image);
-                currentHouseTotal = house3Total;
-            } else if (imageView == house4Image) {
-                playRound(3, house4Total, house4Image);
-                currentHouseTotal = house4Total;
-            }
+        if (imageView == house1Image) {
+            playRound(0, house1Total, house1Image);
+            currentHouseTotal = house1Total;
+        } else if (imageView == house2Image) {
+            playRound(1, house2Total, house2Image);
+            currentHouseTotal = house2Total;
+        } else if (imageView == house3Image) {
+            playRound(2, house3Total, house3Image);
+            currentHouseTotal = house3Total;
+        } else if (imageView == house4Image) {
+            playRound(3, house4Total, house4Image);
+            currentHouseTotal = house4Total;
+        }
 
         clearHouseIfPlayerScoresAndAddPoints(currentHouseTotal, imageView);
         closeHouse(game.getPlayer().getChoice(), imageView);
 
-        if (house1Image.isDisable() && house2Image.isDisable() && house3Image.isDisable() && house4Image.isDisable()) {
-            disableImages(true);
-            gameEnd(false);
-        } else if (game.getRound() == 40) {
+        if (game.getRound() == 40) {
             disableImages(true);
             gameEnd(true);
             currentCard.setImage(defaultHouseImage);
             cardsLeft.setText("Cards left: " + "0");
+        } else if (house1Image.isDisable() && house2Image.isDisable() && house3Image.isDisable() && house4Image.isDisable()) {
+            disableImages(true);
+            gameEnd(false);
+
         }
-        if(game.getRound() < 40){
+        if (game.getRound() < 40) {
             showCurrentCard();
         }
     }
@@ -197,6 +205,7 @@ public class Controller implements Initializable {
 
     /**
      * This method is used to place card in a chosen house.
+     *
      * @param imageView the house's ImageView.
      */
     public void replaceCard(ImageView imageView) {
@@ -205,25 +214,27 @@ public class Controller implements Initializable {
 
     /**
      * This method is used to set the total amount on each house and changes the text.
-     * @param choice the player's house choice.
+     *
+     * @param choice     the player's house choice.
      * @param houseTotal the house total Label.
      * @param houseImage the house image ImageView
      */
-    public void playRound(int choice, Label houseTotal, ImageView houseImage){
+    public void playRound(int choice, Label houseTotal, ImageView houseImage) {
         game.getPlayer().setChoice(choice);
         replaceCard(houseImage);
         currentCardValue = game.getBoard()[game.getPlayer().getChoice()].addPoints(game.getPlayer().getCurrentCard().getValue());
-        houseTotal.setText("House " + (choice + 1) + " \ntotal: "  + game.getBoard()[choice].calculateSumOfHouse());
+        houseTotal.setText("House " + (choice + 1) + " \ntotal: " + game.getBoard()[choice].calculateSumOfHouse());
     }
 
     /**
      * This method is used to close a house.
      * It changes the image to the stop image and makes it un-clickable.
-     * @param choice the player's house of choice.
+     *
+     * @param choice     the player's house of choice.
      * @param houseImage the house's image ImageView.
      */
-    public void closeHouse(int choice, ImageView houseImage){
-        if(game.getBoard()[choice].isClosed()){
+    public void closeHouse(int choice, ImageView houseImage) {
+        if (game.getBoard()[choice].isClosed()) {
             houseImage.setImage(stopImage);
             houseImage.setDisable(true);
         }
@@ -235,11 +246,12 @@ public class Controller implements Initializable {
      * It changes the label of the player's score.
      * It changes the label of the house's total.
      * It sets the house image to the default one.
-     * @param label the house's Label.
+     *
+     * @param label     the house's Label.
      * @param imageView the house's ImageView.
      */
-    public void clearHouseIfPlayerScoresAndAddPoints(Label label, ImageView imageView){
-        if(game.getBoard()[game.getPlayer().getChoice()].calculateSumOfHouse() == 31){
+    public void clearHouseIfPlayerScoresAndAddPoints(Label label, ImageView imageView) {
+        if (game.getBoard()[game.getPlayer().getChoice()].calculateSumOfHouse() == 31) {
 
             game.getBoard()[game.getPlayer().getChoice()].clearHouse();
             game.getPlayer().addPointsToPlayer();
@@ -253,15 +265,16 @@ public class Controller implements Initializable {
      * This method is used to create a new stage when the game ends.
      * If the player won, it creates a window with title "YOU WIN!"
      * If the player lost, it creates a window with title "YOU LOSE!" and sets the player's points to 0.
+     *
      * @param won true or false depending on whether the player won or lost.
      * @throws IOException IOException for the gameEnd method.
      */
-    public void gameEnd(boolean won) throws IOException{
+    public void gameEnd(boolean won) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("endStage.fxml"));
         Stage endStage = new Stage();
-        if(won){
+        if (won) {
             endStage.setTitle("YOU WIN!");
-        } else{
+        } else {
             endStage.setTitle("YOU LOSE!");
             game.getPlayer().setPoints(0);
             playerPoints.setText("Player points: 0");
@@ -298,14 +311,16 @@ public class Controller implements Initializable {
 
     /**
      * This method is used to quit the game.
+     *
      * @param actionEvent ActionEvent for the quitGame method.
      */
-    public void quitGame(ActionEvent actionEvent){
+    public void quitGame(ActionEvent actionEvent) {
         System.exit(0);
     }
 
     /**
      * This method is used to make all the house images un-clickable or not.
+     *
      * @param value true or false depending on whether the house images need to be disabled.
      */
     public void disableImages(boolean value) {
@@ -317,6 +332,7 @@ public class Controller implements Initializable {
 
     /**
      * This method retuns the game.
+     *
      * @return the game.
      */
     public static Game getGame() {
@@ -326,7 +342,8 @@ public class Controller implements Initializable {
     /**
      * This method is used to set the parameters for the game window.
      * It calls the showCurrentCard method when the game starts and sets the background image.
-     * @param location URL for the initialize method
+     *
+     * @param location  URL for the initialize method
      * @param resources ResourceBundle for the initialize method
      */
     @Override

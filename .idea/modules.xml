@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FourHouses31GUI.iml" filepath="$PROJECT_DIR$/FourHouses31GUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HouseOfCards.iml" filepath="$PROJECT_DIR$/HouseOfCards.iml" />
     </modules>
   </component>
 </project>

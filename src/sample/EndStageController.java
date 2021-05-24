@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,11 +23,13 @@ public class EndStageController implements Initializable {
     /**
      * This is a private Label attribute for the result label.
      */
-    @FXML private Label resultLabel;
+    @FXML
+    private Label resultLabel;
 
     /**
      * This method is used to check whether the player won or lost and sets the label accordingly.
-     * @param location URL for the initialize method
+     *
+     * @param location  URL for the initialize method
      * @param resources ResourceBundle for the initialize method
      */
     @Override
@@ -41,6 +44,7 @@ public class EndStageController implements Initializable {
     /**
      * This method is used to reset the game state when the play again button is clicked.
      * It loads the controller of the first stage and hides the end stage controller.
+     *
      * @param actionEvent ActionEvent for the playAgainButton method.
      * @throws IOException IOException for the playAgainButton method.
      */
@@ -62,6 +66,7 @@ public class EndStageController implements Initializable {
 
     /**
      * Thid method is used to quit the game.
+     *
      * @param actionEvent ActionEvent for the quit method.
      */
     public void quit(ActionEvent actionEvent) {

@@ -29,6 +29,7 @@ public class Player {
 
     /**
      * The non-default constructor accepts one parameter:
+     *
      * @param points the player's points.
      */
     public Player(int points) {
@@ -44,6 +45,7 @@ public class Player {
 
     /**
      * This method is used to set the player's points.
+     *
      * @param points the player's points.
      */
     public void setPoints(int points) {
@@ -52,6 +54,7 @@ public class Player {
 
     /**
      * This method is used to set the player's current card.
+     *
      * @param currentCard the player's current card.
      */
     public void setCurrentCard(Card currentCard) {
@@ -60,6 +63,7 @@ public class Player {
 
     /**
      * This method is used to set the player's house selection.
+     *
      * @param choice the player's choice.
      */
     public void setChoice(int choice) {
@@ -70,6 +74,7 @@ public class Player {
 
     /**
      * This method returns the player's points.
+     *
      * @return the player's points
      */
     public int getPoints() {
@@ -78,6 +83,7 @@ public class Player {
 
     /**
      * This method returns the player's current card.
+     *
      * @return the player's current card.
      */
     public Card getCurrentCard() {
@@ -86,6 +92,7 @@ public class Player {
 
     /**
      * This method returns the player's house selection.
+     *
      * @return the player's choice.
      */
     public int getChoice() {
