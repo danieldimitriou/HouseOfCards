@@ -150,7 +150,7 @@ public class Controller implements Initializable {
      * It clears the house and awards the player 100 points when they score 31 in a house.
      * It closes the house if the player scores more than 31 in a house.
      * It draws a new window by calling the gameEnd method when a player wins or loses and makes the images un-clickable
-     * It draws a card and shows it only if the round < 40
+     * It draws a card and shows it only if the round is less than 40
      *
      * @param mouseEvent the mouse click event.
      * @throws IOException IOException for the placeCard method.
