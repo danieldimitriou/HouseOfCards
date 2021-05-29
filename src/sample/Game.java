@@ -48,7 +48,7 @@ public class Game {
     public void reset() {
         player.setPoints(0);
         deck.resetDeck();
-        round = 0;
+        round = 1;
         for (House house : board) {
             house.getPointsHistory().clear();
         }
